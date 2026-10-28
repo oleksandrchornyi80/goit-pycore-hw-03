@@ -1,7 +1,7 @@
 import datetime
-def get_days_from_today(date) -> int:
+def get_days_from_today(date: str) -> int:
     try:
-        given_date = datetime.datetime.strptime('РРРР-ММ-ДД', datetime)
+        given_date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
         current_date = datetime.date.today()
         difference = current_date - given_date
         return difference.days
